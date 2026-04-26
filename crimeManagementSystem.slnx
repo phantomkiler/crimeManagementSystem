@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="crimeManagementSystem.vcxproj" />
+  <Project Path="crimeManagementSystem.vcxproj" Id="8fe7940a-8734-481b-a06c-c8054f69d3e8" />
 </Solution>
