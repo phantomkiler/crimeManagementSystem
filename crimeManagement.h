@@ -1,6 +1,5 @@
-﻿#ifndef crimeManagement.h
-#define crimeManagement.h
-
+﻿#ifndef crimeManagement_h
+#define crimeManagement_h
 #include<iostream>
 #include <fstream>
 #include <string>
