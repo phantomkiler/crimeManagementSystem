@@ -1,5 +1,5 @@
-#ifndef crimeManagement.h
-#define crimeManagement.h
+#ifndef crimeManagement_h
+#define crimeManagement_h
 #include<iostream>
 using namespace std;
 class Criminal {};

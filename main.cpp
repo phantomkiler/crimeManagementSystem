@@ -1,2 +1,5 @@
 #include "crimeManagement.h"
-int main() { return 0; }
+int main() {
+	cout << "muazii";
+	return 0; 
+}
