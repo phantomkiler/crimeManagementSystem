@@ -124,7 +124,6 @@ public:
 void saveOfficersToFile(const string& officerFile, Officer** officers, int officerCount);
 int loadOfficersFromFile(const string& officerFile, Officer** officers);
 
-
 class Criminal {};
 class FIR {};
 class MedicalHistory {};
