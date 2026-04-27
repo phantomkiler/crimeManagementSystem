@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8fe7940a-8734-481b-a06c-c8054f69d3e8}</ProjectGuid>
+    <ProjectGuid>{8FE7940A-8734-481B-A06C-C8054F69D3E8}</ProjectGuid>
     <RootNamespace>crimeManagementSystem</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
