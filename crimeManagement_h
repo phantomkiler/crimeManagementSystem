@@ -1,0 +1,75 @@
+﻿#ifndef crimeManagement_h
+#define crimeManagement_h
+#include<iostream>
+#include <string>
+using namespace std;
+
+//  FEATURE 7 Evidence Cataloguing
+class Evidence {
+private:
+    int    evidenceID;
+    string description;
+    string timestamp;   
+    string linkedFIR_ID;    // which FIR this belongs to
+
+    static int evidenceCounter;
+
+public:
+    Evidence();
+    Evidence(string desc, string time, string firID);
+    Evidence& setDescription(string desc);//cascaded function 
+    Evidence& setTimestamp(string time);
+    Evidence& setLinkedFIR(string firID);
+    int    getEvidenceID()   const; // Getters
+    string getDescription()  const;
+    string getTimestamp()    const;
+    string getLinkedFIR()    const;
+    Evidence operator+(const Evidence& other) const; //merge two evidence logs
+
+    void displayEvidence() const;
+};
+//  FEATURE 13 Medical Profile Management
+class MedicalProfile {
+private:
+    string bloodGroup;
+    string allergies;
+    string mentalHealthStatus;   //"Stable", "Unstable"
+    string physicalMarks;        // scars, tattoos, etc
+public:
+    MedicalProfile();
+    MedicalProfile(string blood, string allergy,string mental, string marks);
+    MedicalProfile& setBloodGroup(string bg);// Cascaded setters
+    MedicalProfile& setAllergies(string allergy);
+    MedicalProfile& setMentalHealth(string status);
+    MedicalProfile& setPhysicalMarks(string marks);
+    string getBloodGroup()       const;// Getters
+    string getAllergies()         const;
+    string getMentalHealth()     const;
+    string getPhysicalMarks()    const;
+
+    void displayMedicalProfile() const;
+};
+//  FEATURE 14  Kinship,Family Mapping
+class FamilyMember {
+public:
+    string name;
+    string relation;   // Father, Mother, Spouse, Sibling
+    string contact;
+};
+
+class FamilyRecord {
+private:
+    FamilyMember* members;   // dynamic array (pointer usage)
+    int count;
+    int capacity;
+
+public:
+    FamilyRecord();
+    ~FamilyRecord();   // destructor frees dynamic memory
+
+    void addFamilyMember(string name, string relation, string contact);
+    void displayFamily() const;
+    int  getMemberCount() const;
+};
+
+#endif // !crimeManagement.h
