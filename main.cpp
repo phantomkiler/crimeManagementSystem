@@ -1,5 +1,4 @@
 #include "crimeManagement.h"
-
 string getCurrentTime() {
     string dateTime;
     cout << "Enter date and time ";
@@ -61,10 +60,14 @@ void medicalMenu() {
         cin.ignore();
         if (choice == 1) {
             string blood, allergy, mental, marks;
-            cout << "Blood Group: "; getline(cin, blood);
-            cout << "Allergies: "; getline(cin, allergy);
-            cout << "Mental Health Status: "; getline(cin, mental);
-            cout << "Physical Marks: "; getline(cin, marks);
+            cout << "Blood Group: ";
+            getline(cin, blood);
+            cout << "Allergies: ";
+            getline(cin, allergy);
+            cout << "Mental Health Status: "; 
+            getline(cin, mental);
+            cout << "Physical Marks: "; 
+            getline(cin, marks);
             profile.setBloodGroup(blood).setAllergies(allergy).setMentalHealth(mental).setPhysicalMarks(marks);
             cout << "Medical profile saved!" << endl;
         }
@@ -87,9 +90,12 @@ void familyMenu() {
         cin.ignore();
         if (choice == 1) {
             string name, relation, contact;
-            cout << "Name: "; getline(cin, name);
-            cout << "Relation: "; getline(cin, relation);
-            cout << "Contact: "; getline(cin, contact);
+            cout << "Name: ";
+            getline(cin, name);
+            cout << "Relation: ";
+            getline(cin, relation);
+            cout << "Contact: ";
+            getline(cin, contact);
             family.addFamilyMember(name, relation, contact);
             cout << "Family member added!" << endl;
         }
