@@ -71,5 +71,53 @@ public:
     void displayFamily() const;
     int  getMemberCount() const;
 };
+class medicalprofile {
+private:
+    string criminalid;
+    string bloodgroup;
+    string allergies;
+    string mentalhealth;
+    string physicalmarks;
+
+public:
+    void setdata();
+    void display();
+    string getcriminalid();
+    void savetofile(ofstream& file);
+    void loadfromfile(ifstream& file);
+};
+class anonymousreport {
+private:
+    static int counter;
+    int    reportid;
+    string description;
+    string location;
+    string status;
+
+public:
+    anonymousreport();
+    void setdata();
+    void display();
+    void updatestatus();
+    int  getreportid();
+    void savetofile(ofstream& file);
+    void loadfromfile(ifstream& file);
+};
+class statsdashboard {
+private:
+    static int totalcases;
+
+public:
+    static void addcase();
+    static int  gettotal();
+    void display(int open, int underinvestigation, int closed, int tips);
+};
+class filepersistence {
+public:
+    void savemedical(medicalprofile profiles[], int count);
+    void loadmedical(medicalprofile profiles[], int& count);
+    void savereports(anonymousreport reports[], int count);
+    void loadreports(anonymousreport reports[], int& count);
+};
 
 #endif // !crimeManagement.h
