@@ -1,4 +1,13 @@
 #include "crimeManagement_h"
+#include "crime_system.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+    CrimeManagementSystem cms;
+    cms.run();
+    return 0;
+}
 
 string getCurrentTime() {
     string dateTime;
@@ -192,5 +201,122 @@ int main() {
                 cout << "Invalid choice\n";
             }
         }
+          medicalprofile  profiles[10];
+  anonymousreport reports[10];
+  int profilecount = 0;
+  int reportcount = 0;
+
+  filepersistence fp;
+  statsdashboard  dash;
+
+  
+  fp.loadmedical(profiles, profilecount);
+  fp.loadreports(reports, reportcount);
+
+  int choice;
+  do {
+      cout << "\n          main menu         " << endl;
+      cout << "1 anonymous crime reporting " << endl;
+      cout << "2 crime statistics dashboard " << endl;
+      cout << "3 file persistence " << endl;
+      cout << "4 medical profile management " << endl;
+      cout << "0 exit" << endl;
+      cout << "Choice: ";
+      cin >> choice;
+
+      // Feature 10
+      if (choice == 1) {
+          int c;
+          cout << "1|Submit Tip  2|View All  3|Update Status" << endl;
+          cout << "choice: ";
+          cin >> c;
+
+          if (c == 1 && reportcount < 10) {
+              reports[reportcount].setdata();
+              reportcount++;
+              cout << "tip submitted!" << endl;
+
+          }
+          else if (c == 2) {
+              for (int i = 0; i < reportcount; i++)
+                  reports[i].display();
+
+          }
+          else if (c == 3) {
+              int id;
+              cout << "enter report id: ";
+              cin >> id;
+              for (int i = 0; i < reportcount; i++)
+                  if (reports[i].getreportid() == id)
+                      reports[i].updatestatus();
+          }
+
+          // Feature 11
+      }
+      else if (choice == 2) {
+          int open, inv, closed;
+          cout << "enter open cases count: ";           cin >> open;
+          cout << "enter under investigation count: ";  cin >> inv;
+          cout << "enter closed cases count: ";         cin >> closed;
+
+          int newtotal = open + inv + closed;
+          while (statsdashboard::gettotal() < newtotal)
+              statsdashboard::addcase();
+
+          dash.display(open, inv, closed, reportcount);
+
+          // Feature 12
+      }
+      else if (choice == 3) {
+          int c;
+          cout << "1|Save All  2|Load All" << endl;
+          cout << "choice: ";
+          cin >> c;
+          if (c == 1) {
+              fp.savemedical(profiles, profilecount);
+              fp.savereports(reports, reportcount);
+          }
+          else if (c == 2) {
+              fp.loadmedical(profiles, profilecount);
+              fp.loadreports(reports, reportcount);
+          }
+
+          // Feature 13
+      }
+      else if (choice == 4) {
+          int c;
+          cout << "1|add profile  2|view all  3|search by id" << endl;
+          cout << "choice: ";
+          cin >> c;
+
+          if (c == 1 && profilecount < 10) {
+              profiles[profilecount].setdata();
+              profilecount++;
+              cout << "profile added.." << endl;
+
+          }
+          else if (c == 2) {
+              for (int i = 0; i < profilecount; i++)
+                  profiles[i].display();
+
+          }
+          else if (c == 3) {
+              string id;
+              cout << "enter criminal id: ";
+              cin >> id;
+              for (int i = 0; i < profilecount; i++)
+                  if (profiles[i].getcriminalid() == id)
+                      profiles[i].display();
+          }
+
+      }
+      else if (choice == 0) {
+          fp.savemedical(profiles, profilecount);
+          fp.savereports(reports, reportcount);
+          cout << "data saved. goodbye pookie!" << endl;
+      }
+
+  } while (choice != 0);
+
     return 0;
 }

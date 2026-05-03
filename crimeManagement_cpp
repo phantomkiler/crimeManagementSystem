@@ -488,3 +488,149 @@ void CaseDatabase::displayAll() const {
     for (int i = 0; i < count; i++)
         cases[i]->display();
 }
+void medicalprofile::setdata() {
+    cout << "Enter Criminal ID: ";
+    cin >> criminalid;
+    cout << "Enter Blood Group: ";
+    cin >> bloodgroup;
+    cout << "Enter Allergies: ";
+    cin >> allergies;
+    cout << "Enter Mental Health Status: ";
+    cin >> mentalhealth;
+    cout << "Enter Physical Marks (scars/tattoos): ";
+    cin >> physicalmarks;
+}
+
+void medicalprofile::display() {
+    cout << "   Medical Profile   " << endl;
+    cout << "Criminal ID   : " << criminalid << endl;
+    cout << "Blood Group   : " << bloodgroup << endl;
+    cout << "Allergies     : " << allergies << endl;
+    cout << "Mental Health : " << mentalhealth << endl;
+    cout << "Physical Marks: " << physicalmarks << endl;
+}
+
+string medicalprofile::getcriminalid() {
+    return criminalid;
+}
+
+void medicalprofile::savetofile(ofstream& file) {
+    file << criminalid << " " << bloodgroup << " "
+        << allergies << " " << mentalhealth << " "
+        << physicalmarks << endl;
+}
+
+void medicalprofile::loadfromfile(ifstream& file) {
+    file >> criminalid >> bloodgroup >> allergies
+        >> mentalhealth >> physicalmarks;
+}
+
+int anonymousreport::counter = 0;
+
+anonymousreport::anonymousreport() {
+    counter++;
+    reportid = counter;
+    description = "";
+    location = "";
+    status = "Pending";
+}
+
+void anonymousreport::setdata() {
+    cout << "Enter Crime Description: ";
+    cin >> description;
+    cout << "Enter Location: ";
+    cin >> location;
+    status = "Pending";
+}
+
+void anonymousreport::display() {
+    cout << " Anonymous Report " << endl;
+    cout << "Report ID   : " << reportid << endl;
+    cout << "Description : " << description << endl;
+    cout << "Location    : " << location << endl;
+    cout << "Status      : " << status << endl;
+}
+
+void anonymousreport::updatestatus() {
+    cout << "1| Pending  2| Reviewed  3| Escalated" << endl;
+    cout << "Choose status: ";
+    int choice;
+    cin >> choice;
+    if (choice == 1) status = "pending";
+    else if (choice == 2) status = "reviewed";
+    else if (choice == 3) status = "escalated";
+}
+
+int anonymousreport::getreportid() {
+    return reportid;
+}
+
+void anonymousreport::savetofile(ofstream& file) {
+    file << reportid << " " << description << " "
+        << location << " " << status << endl;
+}
+
+void anonymousreport::loadfromfile(ifstream& file) {
+    file >> reportid >> description >> location >> status;
+    if (reportid > counter) counter = reportid;
+}
+
+int statsdashboard::totalcases = 0;
+
+void statsdashboard::addcase() {
+    totalcases++;
+}
+
+int statsdashboard::gettotal() {
+    return totalcases;
+}
+
+void statsdashboard::display(int open, int underinvestigation, int closed, int tips) {
+    cout << "crime statistics dashboard" << endl;
+    cout << "total cases  : " << totalcases << endl;
+    cout << "open cases             : " << open << endl;
+    cout << "under investigation    : " << underinvestigation << endl;
+    cout << "closed cases           : " << closed << endl;
+    cout << "anonymous tips         : " << tips << endl;
+    cout << "                                  " << endl;
+}
+
+void filepersistence::savemedical(medicalprofile profiles[], int count) {
+    ofstream file("medical.txt");
+    for (int i = 0; i < count; i++)
+        profiles[i].savetofile(file);
+    file.close();
+    cout << "medical profiles saved." << endl;
+}
+
+void filepersistence::loadmedical(medicalprofile profiles[], int& count) {
+    ifstream file("medical.txt");
+    if (!file) { cout << "no medical file found." << endl; return; }
+    count = 0;
+    while (!file.eof() && count < 10) {
+        profiles[count].loadfromfile(file);
+        if (file) count++;
+    }
+    file.close();
+    cout << count << " medical profile loaded." << endl;
+}
+
+void filepersistence::savereports(anonymousreport reports[], int count) {
+    ofstream file("reports.txt");
+    for (int i = 0; i < count; i++)
+        reports[i].savetofile(file);
+    file.close();
+    cout << "reports saved." << endl;
+}
+
+void filepersistence::loadreports(anonymousreport reports[], int& count) {
+    ifstream file("reports.txt");
+    if (!file) { cout << "no reports file found." << endl; return; }
+    count = 0;
+    while (!file.eof() && count < 10) {
+        reports[count].loadfromfile(file);
+        if (file) count++;
+    }
+    file.close();
+    cout << count << " report(s) loaded." << endl;
+}
