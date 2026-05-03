@@ -194,5 +194,6 @@ int loadOfficersFromFile(const string& officerFile, Officer** officers);
 class Criminal {};
 class FIR {};
 class MedicalHistory {};
+class admin{};
 
 #endif // !crimeManagement.h
