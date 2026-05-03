@@ -5,6 +5,136 @@
 #include <string>
 using namespace std;
 //  FEATURE 7 Evidence Cataloguing
+#ifndef CRIME_SYSTEM_H
+#define CRIME_SYSTEM_H
+
+const int MAX_STRING = 100;
+const int MAX_REPORTS = 100;
+const int MAX_USERS = 50;
+const int MAX_ADMINS = 10;
+
+class Admin {
+private:
+    char* username;
+    char* password;
+    char* fullName;
+    char* badgeNumber;
+    char* policeStation;
+public:
+    Admin();
+    Admin(const Admin& other);
+    ~Admin();
+    void setUsername(const char* uname);
+    void setPassword(const char* pwd);
+    void setFullName(const char* name);
+    void setBadgeNumber(const char* badge);
+    void setPoliceStation(const char* station);
+    const char* getUsername() const;
+    const char* getPassword() const;
+    const char* getFullName() const;
+    const char* getBadgeNumber() const;
+    const char* getPoliceStation() const;
+    void display() const;
+    bool authenticate(const char* uname, const char* pwd) const;
+    Admin& operator=(const Admin& other);
+};
+
+class User {
+private:
+    char* username;
+    char* password;
+    char* fullName;
+    char* phone;
+    char* email;
+public:
+    User();
+    User(const User& other);
+    ~User();
+    void setUsername(const char* uname);
+    void setPassword(const char* pwd);
+    void setFullName(const char* name);
+    void setPhone(const char* ph);
+    void setEmail(const char* mail);
+    const char* getUsername() const;
+    const char* getPassword() const;
+    const char* getFullName() const;
+    const char* getPhone() const;
+    const char* getEmail() const;
+    void display() const;
+    bool authenticate(const char* uname, const char* pwd) const;
+    User& operator=(const User& other);
+};
+
+class CrimeReport {
+private:
+    int reportID;
+    char* crimeType;
+    char* location;
+    char* date;
+    char* description;
+    char* reporterName;
+    char* status;
+    char* assignedOfficer;
+public:
+    CrimeReport();
+    CrimeReport(const CrimeReport& other);
+    ~CrimeReport();
+    void setReportID(int id);
+    void setCrimeType(const char* type);
+    void setLocation(const char* loc);
+    void setDate(const char* d);
+    void setDescription(const char* desc);
+    void setReporterName(const char* name);
+    void setStatus(const char* s);
+    void setAssignedOfficer(const char* officer);
+    int getReportID() const;
+    const char* getCrimeType() const;
+    const char* getLocation() const;
+    const char* getDate() const;
+    const char* getDescription() const;
+    const char* getReporterName() const;
+    const char* getStatus() const;
+    const char* getAssignedOfficer() const;
+    void display() const;
+    CrimeReport& operator=(const CrimeReport& other);
+};
+
+class CrimeManagementSystem {
+private:
+    CrimeReport** reports;
+    User** users;
+    Admin** admins;
+    int reportCount;
+    int userCount;
+    int adminCount;
+    int nextReportID;
+    void loadData();
+    void saveData() const;
+    bool isUsernameTaken(const char* username) const;
+    void getCurrentDate(char* date) const;
+public:
+    CrimeManagementSystem();
+    ~CrimeManagementSystem();
+    void userRegistration();
+    bool userLogin(char* loggedInUsername);
+    void adminLogin();
+    void fileCrimeReport(const char* username);
+    void viewMyReports(const char* username) const;
+    void viewAllReports() const;
+    void updateReportStatus();
+    void assignOfficerToReport();
+    void searchReportByID() const;
+    void viewAllUsers() const;
+    void deleteUser();
+    void viewAllAdmins() const;
+    void addNewAdmin();
+    void userMenu(char* username);
+    void adminMenu();
+    void run();
+};
+
+#endif
+
 class Evidence {
 private:
     int    evidenceID;
