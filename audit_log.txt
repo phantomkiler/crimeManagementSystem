@@ -1,0 +1,83 @@
+[Sat May  2 20:45:03 2026] ACTION: ADD_ADMIN | DETAILS: Created admin: afu 
+[Sat May  2 20:45:16 2026] ACTION: ADD_USER | DETAILS: Created user: afu
+[Sat May  2 23:11:37 2026] ACTION: ADD_ADMIN | DETAILS: Created admin: afwan
+[Sat May  2 23:51:00 2026] ACTION: ADD_USER | DETAILS: Created user: muaz
+[Sun May  3 01:13:07 2026] ACTION: ADD_USER | DETAILS: Created user: zuhair
+[Sun May  3 03:15:02 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 03:15:02 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 03:15:21 2026] ACTION: CLOSE_CASE | DETAILS: Closed Case: CR-2026-004 - Theft - Afwan - Reason: Convicted
+[Sun May  3 03:15:55 2026] ACTION: ARCHIVE_SUSPECT | DETAILS: Archived Suspect: MR - Reason: Transferred Jurisdiction
+[Sun May  3 03:17:09 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 03:17:09 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 03:17:40 2026] ACTION: SESSION_login | DETAILS: muaz (User) login
+[Sun May  3 03:17:40 2026] ACTION: LOGIN | DETAILS: User login: muaz
+[Sun May  3 03:18:20 2026] ACTION: SESSION_logout | DETAILS: muaz (User) logout
+[Sun May  3 03:18:20 2026] ACTION: LOGOUT | DETAILS: User logged out: muaz
+[Sun May  3 03:18:27 2026] ACTION: SESSION_login | DETAILS: zuhair (User) login
+[Sun May  3 03:18:27 2026] ACTION: LOGIN | DETAILS: User login: zuhair
+[Sun May  3 03:22:57 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 03:22:57 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 03:23:25 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 03:23:25 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 03:23:35 2026] ACTION: SESSION_login | DETAILS: zuhair (User) login
+[Sun May  3 03:23:35 2026] ACTION: LOGIN | DETAILS: User login: zuhair
+[Sun May  3 03:23:44 2026] ACTION: SESSION_logout | DETAILS: zuhair (User) logout
+[Sun May  3 03:23:44 2026] ACTION: LOGOUT | DETAILS: User logged out: zuhair
+[Sun May  3 03:23:54 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 03:23:54 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 03:24:24 2026] ACTION: CLOSE_CASE | DETAILS: Closed Case: CR-2026-005 - Cybercrime - zuhair - Reason: Deceased
+[Sun May  3 03:33:01 2026] ACTION: ADD_USER | DETAILS: Created user: ahmad
+[Sun May  3 03:35:40 2026] ACTION: SESSION_logout | DETAILS: ahmad (User) logout
+[Sun May  3 03:35:40 2026] ACTION: LOGOUT | DETAILS: User logged out: ahmad
+[Sun May  3 03:35:55 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 03:35:55 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 03:38:00 2026] ACTION: RECRUIT_OFFICER | DETAILS: Recruited Officer: pasha - Rank: Standard Officer
+[Sun May  3 03:39:06 2026] ACTION: CLOSE_CASE | DETAILS: Closed Case: CR-2026-006 - Vandalism - Ahmad - Reason: Case Closed
+[Sun May  3 03:40:54 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 03:40:54 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 03:41:37 2026] ACTION: SESSION_login | DETAILS: ahmad (User) login
+[Sun May  3 03:41:37 2026] ACTION: LOGIN | DETAILS: User login: ahmad
+[Sun May  3 03:55:23 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 03:55:23 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 03:56:44 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 03:56:44 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 03:57:18 2026] ACTION: SESSION_login | DETAILS: zuhair (User) login
+[Sun May  3 03:57:18 2026] ACTION: LOGIN | DETAILS: User login: zuhair
+[Sun May  3 03:57:51 2026] ACTION: SESSION_logout | DETAILS: zuhair (User) logout
+[Sun May  3 03:57:51 2026] ACTION: LOGOUT | DETAILS: User logged out: zuhair
+[Sun May  3 03:58:12 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 03:58:12 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 03:58:24 2026] ACTION: ARCHIVE_SUSPECT | DETAILS: Archived Suspect: addd - Reason: Deceased
+[Sun May  3 03:59:33 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 03:59:33 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 04:05:22 2026] ACTION: SESSION_login | DETAILS: zuhair (User) login
+[Sun May  3 04:05:22 2026] ACTION: LOGIN | DETAILS: User login: zuhair
+[Sun May  3 04:06:27 2026] ACTION: SESSION_logout | DETAILS: zuhair (User) logout
+[Sun May  3 04:06:27 2026] ACTION: LOGOUT | DETAILS: User logged out: zuhair
+[Sun May  3 04:06:54 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 04:06:54 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 04:16:54 2026] ACTION: SESSION_login | DETAILS: zuhair (User) login
+[Sun May  3 04:16:54 2026] ACTION: LOGIN | DETAILS: User login: zuhair
+[Sun May  3 04:17:00 2026] ACTION: SESSION_logout | DETAILS: zuhair (User) logout
+[Sun May  3 04:17:00 2026] ACTION: LOGOUT | DETAILS: User logged out: zuhair
+[Sun May  3 04:17:56 2026] ACTION: ADD_USER | DETAILS: Created user: afwan
+[Sun May  3 04:19:53 2026] ACTION: SESSION_logout | DETAILS: afwan (User) logout
+[Sun May  3 04:19:53 2026] ACTION: LOGOUT | DETAILS: User logged out: afwan
+[Sun May  3 04:20:04 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 04:20:04 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 04:22:39 2026] ACTION: RECRUIT_OFFICER | DETAILS: Recruited Officer: talha - Rank: Cybercrime Specialist
+[Sun May  3 04:23:48 2026] ACTION: ARCHIVE_SUSPECT | DETAILS: Archived Suspect: REHMAN - Reason: Deceased
+[Sun May  3 04:24:07 2026] ACTION: CLOSE_CASE | DETAILS: Closed Case: CR-2026-007 - Theft - afwan - Reason: Case Closed
+[Sun May  3 04:24:18 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 04:24:18 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 04:24:50 2026] ACTION: SESSION_login | DETAILS: afwan (User) login
+[Sun May  3 04:24:50 2026] ACTION: LOGIN | DETAILS: User login: afwan
+[Sun May  3 16:24:37 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 16:24:37 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 16:25:31 2026] ACTION: SESSION_logout | DETAILS: admin (Admin) logout
+[Sun May  3 16:25:31 2026] ACTION: LOGOUT | DETAILS: Admin logged out: admin
+[Sun May  3 16:26:23 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 16:26:23 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 16:29:27 2026] ACTION: SESSION_login | DETAILS: admin (Admin) login
+[Sun May  3 16:29:27 2026] ACTION: LOGIN | DETAILS: Admin login: admin
+[Sun May  3 16:34:16 2026] ACTION: ARCHIVE_SUSPECT | DETAILS: Archived Suspect: LISA YAMAMOTO - Reason: Deceased

@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #pragma managed(push, off)   // ← ADD THIS as first line
 #include "CrimeManagement.h"
 using namespace std;

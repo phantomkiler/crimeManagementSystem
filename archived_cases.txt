@@ -1,0 +1,21 @@
+4
+CR-2026-004
+Theft - Afwan
+Unknown Crime
+Convicted
+2026-05-03
+CR-2026-005
+Cybercrime - zuhair
+Unknown Crime
+Deceased
+2026-05-03
+CR-2026-006
+Vandalism - Ahmad
+Unknown Crime
+Case Closed
+2026-05-03
+CR-2026-007
+Theft - afwan
+Unknown Crime
+Case Closed
+2026-05-03

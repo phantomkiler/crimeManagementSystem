@@ -1,4 +1,4 @@
-﻿#ifndef CRIME_MANAGEMENT_SYSTEM_H
+#ifndef CRIME_MANAGEMENT_SYSTEM_H
 #define CRIME_MANAGEMENT_SYSTEM_H
 #include <iostream>
 #include <fstream>
