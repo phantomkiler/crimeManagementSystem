@@ -1,4 +1,13 @@
 #include "crimeManagement_h"
+#include "crime_system.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+    CrimeManagementSystem cms;
+    cms.run();
+    return 0;
+}
 
 string getCurrentTime() {
     string dateTime;
