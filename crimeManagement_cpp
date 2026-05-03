@@ -1,4 +1,162 @@
 ﻿#include "crimeManagement_h"
+#define _CRT_SECURE_NO_WARNINGS
+#include "crime_system.h"
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <iomanip>
+
+using namespace std;
+
+// ================================
+// Admin Implementation
+// ================================
+Admin::Admin() {
+    username = new char[1]; password = new char[1];
+    fullName = new char[1]; badgeNumber = new char[1];
+    policeStation = new char[1];
+    username[0] = password[0] = fullName[0] = badgeNumber[0] = policeStation[0] = '\0';
+}
+
+Admin::Admin(const Admin& other) {
+    username = new char[strlen(other.username) + 1];
+    password = new char[strlen(other.password) + 1];
+    fullName = new char[strlen(other.fullName) + 1];
+    badgeNumber = new char[strlen(other.badgeNumber) + 1];
+    policeStation = new char[strlen(other.policeStation) + 1];
+    strcpy(username, other.username);
+    strcpy(password, other.password);
+    strcpy(fullName, other.fullName);
+    strcpy(badgeNumber, other.badgeNumber);
+    strcpy(policeStation, other.policeStation);
+}
+
+Admin::~Admin() {
+    delete[] username; delete[] password; delete[] fullName;
+    delete[] badgeNumber; delete[] policeStation;
+}
+
+void Admin::setUsername(const char* uname) { delete[] username; username = new char[strlen(uname)+1]; strcpy(username, uname); }
+void Admin::setPassword(const char* pwd) { delete[] password; password = new char[strlen(pwd)+1]; strcpy(password, pwd); }
+void Admin::setFullName(const char* name) { delete[] fullName; fullName = new char[strlen(name)+1]; strcpy(fullName, name); }
+void Admin::setBadgeNumber(const char* badge) { delete[] badgeNumber; badgeNumber = new char[strlen(badge)+1]; strcpy(badgeNumber, badge); }
+void Admin::setPoliceStation(const char* station) { delete[] policeStation; policeStation = new char[strlen(station)+1]; strcpy(policeStation, station); }
+
+const char* Admin::getUsername() const { return username; }
+const char* Admin::getPassword() const { return password; }
+const char* Admin::getFullName() const { return fullName; }
+const char* Admin::getBadgeNumber() const { return badgeNumber; }
+const char* Admin::getPoliceStation() const { return policeStation; }
+
+void Admin::display() const {
+    cout << "\n----------------------------------------\n";
+    cout << "Username: " << username << "\n";
+    cout << "Full Name: " << fullName << "\n";
+    cout << "Badge Number: " << badgeNumber << "\n";
+    cout << "Police Station: " << policeStation << "\n";
+}
+
+bool Admin::authenticate(const char* uname, const char* pwd) const {
+    return (strcmp(username, uname) == 0 && strcmp(password, pwd) == 0);
+}
+
+Admin& Admin::operator=(const Admin& other) {
+    if (this != &other) {
+        delete[] username; delete[] password; delete[] fullName;
+        delete[] badgeNumber; delete[] policeStation;
+        username = new char[strlen(other.username)+1];
+        password = new char[strlen(other.password)+1];
+        fullName = new char[strlen(other.fullName)+1];
+        badgeNumber = new char[strlen(other.badgeNumber)+1];
+        policeStation = new char[strlen(other.policeStation)+1];
+        strcpy(username, other.username);
+        strcpy(password, other.password);
+        strcpy(fullName, other.fullName);
+        strcpy(badgeNumber, other.badgeNumber);
+        strcpy(policeStation, other.policeStation);
+    }
+    return *this;
+}
+
+// ================================
+// User Implementation
+// ================================
+User::User() {
+    username = new char[1]; password = new char[1];
+    fullName = new char[1]; phone = new char[1]; email = new char[1];
+    username[0] = password[0] = fullName[0] = phone[0] = email[0] = '\0';
+}
+
+User::User(const User& other) {
+    username = new char[strlen(other.username)+1];
+    password = new char[strlen(other.password)+1];
+    fullName = new char[strlen(other.fullName)+1];
+    phone = new char[strlen(other.phone)+1];
+    email = new char[strlen(other.email)+1];
+    strcpy(username, other.username);
+    strcpy(password, other.password);
+    strcpy(fullName, other.fullName);
+    strcpy(phone, other.phone);
+    strcpy(email, other.email);
+}
+
+User::~User() {
+    delete[] username; delete[] password; delete[] fullName;
+    delete[] phone; delete[] email;
+}
+
+void User::setUsername(const char* uname) { delete[] username; username = new char[strlen(uname)+1]; strcpy(username, uname); }
+void User::setPassword(const char* pwd) { delete[] password; password = new char[strlen(pwd)+1]; strcpy(password, pwd); }
+void User::setFullName(const char* name) { delete[] fullName; fullName = new char[strlen(name)+1]; strcpy(fullName, name); }
+void User::setPhone(const char* ph) { delete[] phone; phone = new char[strlen(ph)+1]; strcpy(phone, ph); }
+void User::setEmail(const char* mail) { delete[] email; email = new char[strlen(mail)+1]; strcpy(email, mail); }
+
+const char* User::getUsername() const { return username; }
+const char* User::getPassword() const { return password; }
+const char* User::getFullName() const { return fullName; }
+const char* User::getPhone() const { return phone; }
+const char* User::getEmail() const { return email; }
+
+void User::display() const {
+    cout << "\n----------------------------------------\n";
+    cout << "Username: " << username << "\n";
+    cout << "Full Name: " << fullName << "\n";
+    cout << "Phone: " << phone << "\n";
+    cout << "Email: " << email << "\n";
+}
+
+bool User::authenticate(const char* uname, const char* pwd) const {
+    return (strcmp(username, uname) == 0 && strcmp(password, pwd) == 0);
+}
+
+User& User::operator=(const User& other) {
+    if (this != &other) {
+        delete[] username; delete[] password; delete[] fullName;
+        delete[] phone; delete[] email;
+        username = new char[strlen(other.username)+1];
+        password = new char[strlen(other.password)+1];
+        fullName = new char[strlen(other.fullName)+1];
+        phone = new char[strlen(other.phone)+1];
+        email = new char[strlen(other.email)+1];
+        strcpy(username, other.username);
+        strcpy(password, other.password);
+        strcpy(fullName, other.fullName);
+        strcpy(phone, other.phone);
+        strcpy(email, other.email);
+    }
+    return *this;
+}
+
+// ================================
+// CrimeReport Implementation
+// ================================
+// (Same pattern: constructor, destructor, setters/getters, display, operator=)
+// ================================
+// CrimeManagementSystem Implementation
+// ================================
+// (All methods: loadData, saveData, userRegistration, userLogin, adminLogin, fileCrimeReport, viewMyReports, etc.)
+// Copy them from your original file into this section.
+
 //  FEATURE 7 — Evidence Cataloguing
 int Evidence::evidenceCounter = 0;  // static member here
 
